@@ -50,3 +50,23 @@
                     items: [
                         {name: "Milk", number: 2},
                     ]
+                }
+            },
+            methods: {
+                addItem(){
+                    let newItem ={
+                        name: this.itemName,
+                        number: this.itemNumber
+                    }
+                    this.items.push(newItem)
+                    this.itemName = null
+                    this.itemNumber = null
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+    
+</body>
+
+</html>
