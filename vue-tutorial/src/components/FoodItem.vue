@@ -1,35 +1,24 @@
 <template>
     <div>
-        <h2>{{ foodName }}
-            <img src="@/assets/img_quality.svg" v-show="isFavorite" alt="">
-        </h2>
-        <p>{{ foodDesc }}</p>
-        <button v-on:click="ToggleFavorite">
-            Favorite
-        </button>
+        <slot></slot>
     </div>
 </template>
 
 <script>
-export default {
-    props: {
-        foodName: String,
-        foodDesc: String,
-        isFavorite: Boolean 
-    },
 
-
-    methods: {
-        ToggleFavorite(){
-            this.$emit('toggle-favorite', this.foodName);
-        }
-    }
-}
 </script>
 
-<style>
-img {
-    height: 1.5em;
-    float: right;
-  }
+<style scoped>
+ div {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        flex-basis: 150px;
+        border-radius: 10px;
+        border: solid black 2px;
+        margin: 10px;
+        padding: 0 10px 0;
+    }
+    div:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
 </style>
